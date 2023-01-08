@@ -29,8 +29,11 @@ function calcular(tipo, valor){
 
         }
         if(valor === '='){
-           let campo = eval(resultado.value);
+            if(resulteRegex){
+                    let campo = eval(resultado.value);
            resultado.value = campo;
+            }
+       
         }
 
     }else if(valores){
