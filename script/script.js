@@ -1,5 +1,5 @@
 
-function calcular( tipo, valor){
+function calcular(tipo, valor){
 
     const regex = new RegExp(/[\+\-\*\/\.]$/);
     const resultado = document.getElementById('resultado')
@@ -9,15 +9,24 @@ function calcular( tipo, valor){
     const acaoDigitado = regex.test(val)
     const acao = tipo === 'acao'
     const valores = tipo === 'valor'
+    const resulteRegex = !acaoRealizada || !acaoDigitado
+   
     
     if(acao){
         if(valor === 'c'){
             resultado.value = "";
         }
-       if(!acaoRealizada || !acaoDigitado){ 
-         if(valor === val[i]){
-            resultado.value += valor;
-         }
+       if(resultado.value == ""){
+        val[3]= val.indexOf("") 
+        val[2]=val.indexOf("") 
+        
+          }
+       if(resulteRegex){ 
+      
+            if(valor === val[i]){
+                        resultado.value += valor;
+                    }
+
         }
         if(valor === '='){
            let campo = eval(resultado.value);
